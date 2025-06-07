@@ -59,7 +59,6 @@ export function LogInPage() {
                             errorMessage={!isPasswordValid ? "Wrong password. Please check and retry." : ""}
                         />
                         <Button
-                            // loading={authState.loading}
                             onClick={handleClick}
                             marginTop="40px"
                             fontWeight={700}

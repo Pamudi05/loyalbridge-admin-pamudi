@@ -24,10 +24,8 @@ export interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
     onClick,
-    icon,
     children,
     className,
-    color,
     fontSize = '16px',
     width = '400px',
     height = '36px',
@@ -36,9 +34,7 @@ const Button: React.FC<ButtonProps> = ({
     lineHeight = '20px',
     marginTop = '10px',
     justifyContent = 'center',
-    textColor,
     style,
-    borderColor,
     disabled = false,
     loading = false,
 }) => {
@@ -53,7 +49,7 @@ const Button: React.FC<ButtonProps> = ({
     };
     return(
         <div
-        // onClick={handleClick}
+        onClick={onClick}
         className={`btn ${className}`}
         style={{
             position: 'relative',

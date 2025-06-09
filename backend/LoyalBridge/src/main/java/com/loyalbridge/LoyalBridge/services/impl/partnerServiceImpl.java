@@ -47,7 +47,7 @@ public class PartnerServiceImpl implements PartnerService{
     public PartnerResponsedto partnerFindById(String id) {
         return toPartnerResponsedto(
             partnerRepo.findById(id)
-            .orElseThrow(()->new RuntimeException("Partner Not Found"))
+            .orElseThrow(()-> new RuntimeException("Partner Not Found"))
         );  
     }
 

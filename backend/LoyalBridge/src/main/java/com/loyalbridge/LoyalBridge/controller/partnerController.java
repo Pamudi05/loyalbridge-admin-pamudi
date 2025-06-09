@@ -35,7 +35,7 @@ public class PartnerController {
         return new ResponseEntity<>(
             StandardResponseDto.builder()
             .code(200)
-            .message("Customer Data!")
+            .message("Partner Data!")
             .data(partnerService.partnerFindById(partnerId))
             .build(),
             HttpStatus.OK
@@ -50,7 +50,7 @@ public class PartnerController {
             return new ResponseEntity<>(
                 StandardResponseDto.builder()
                 .code(201)
-                .message("Customer Updated!")
+                .message("Partner Updated!")
                 .data(null)
                 .build(),
                 HttpStatus.CREATED
@@ -63,7 +63,7 @@ public class PartnerController {
         return new ResponseEntity<>(
                 StandardResponseDto.builder()
                 .code(201)
-                .message("Customer Deleted!")
+                .message("Partner Deleted!")
                 .data(null)
                 .build(),
                 HttpStatus.OK
@@ -78,7 +78,7 @@ public class PartnerController {
             return new ResponseEntity<>(
                 StandardResponseDto.builder()
                 .code(201)
-                .message("Customer List!")
+                .message("Partner List!")
                 .data(partnerService.partnerFindAll(searchText, page, size))
                 .build(),
                 HttpStatus.OK

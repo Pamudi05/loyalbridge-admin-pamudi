@@ -11,7 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class partnerRequestDto {
+public class PartnerRequestDto {
     private String name;
     private String apiUrl;
     private String authMethod;

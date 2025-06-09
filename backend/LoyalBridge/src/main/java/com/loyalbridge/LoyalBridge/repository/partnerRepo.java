@@ -6,18 +6,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.loyalbridge.LoyalBridge.entity.partner;
+import com.loyalbridge.LoyalBridge.entity.Partner;
 
-public interface partnerRepo extends JpaRepository<partner, String>{
+public interface PartnerRepo extends JpaRepository<Partner, String>{
     @Query(
-        value = "SELECT * FROM partner WHERE LOWER(name) LIKE LOWER(CONCAT('%', :searchText, '%'))",
-        countQuery = "SELECT COUNT(*) FROM partner WHERE LOWER(name) LIKE LOWER(CONCAT('%', :searchText, '%'))",
+        value = "SELECT * FROM loyal.partner WHERE LOWER(name) LIKE LOWER(CONCAT('%', :searchText, '%'))",
+        countQuery = "SELECT COUNT(*) FROM loyal.partner WHERE LOWER(name) LIKE LOWER(CONCAT('%', :searchText, '%'))",
         nativeQuery = true
     )
-    Page<partner> searchAllPartners(@Param("searchText") String searchText, Pageable pageable);
+    Page<Partner> searchAllPartners(@Param("searchText") String searchText, Pageable pageable);
 
     @Query(
-        value = "SELECT COUNT(*) FROM partner WHERE LOWER(name) LIKE LOWER(CONCAT('%', :searchText, '%'))",
+        value = "SELECT COUNT(*) FROM loyal.partner WHERE LOWER(name) LIKE LOWER(CONCAT('%', :searchText, '%'))",
         nativeQuery = true
     )
     long countAllPartners(@Param("searchText") String searchText);

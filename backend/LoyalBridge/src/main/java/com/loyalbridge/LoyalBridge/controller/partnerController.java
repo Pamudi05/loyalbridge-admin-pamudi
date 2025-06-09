@@ -4,8 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.loyalbridge.LoyalBridge.dto.request.partnerRequestDto;
-import com.loyalbridge.LoyalBridge.services.partnerService;
+import com.loyalbridge.LoyalBridge.dto.request.PartnerRequestDto;
+import com.loyalbridge.LoyalBridge.services.PartnerService;
 import com.loyalbridge.LoyalBridge.util.StandardResponseDto;
 
 import lombok.RequiredArgsConstructor;
@@ -13,12 +13,12 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("api/v1/partners")
 @RequiredArgsConstructor
-public class partnerController {
+public class PartnerController {
 
-    private final partnerService partnerService;
+    private final PartnerService partnerService;
 
     @PostMapping
-    public ResponseEntity<StandardResponseDto> savePartner(@RequestBody partnerRequestDto dto){
+    public ResponseEntity<StandardResponseDto> savePartner(@RequestBody PartnerRequestDto dto){
         partnerService.partnerSave(dto);
         return new ResponseEntity<>(
             StandardResponseDto.builder()
@@ -45,7 +45,7 @@ public class partnerController {
     @PutMapping("/{id}")
     public ResponseEntity<StandardResponseDto> updatePartner(
         @PathVariable("id") String partnerId,
-        @RequestBody partnerRequestDto dto){
+        @RequestBody PartnerRequestDto dto){
             partnerService.partnerUpdate(dto, partnerId);
             return new ResponseEntity<>(
                 StandardResponseDto.builder()

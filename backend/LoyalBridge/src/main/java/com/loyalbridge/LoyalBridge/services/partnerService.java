@@ -1,13 +1,13 @@
 package com.loyalbridge.LoyalBridge.services;
 
-import com.loyalbridge.LoyalBridge.dto.request.partnerRequestDto;
-import com.loyalbridge.LoyalBridge.dto.response.partnerResponsedto;
-import com.loyalbridge.LoyalBridge.dto.response.paginate.partnerResponsePaginate;
+import com.loyalbridge.LoyalBridge.dto.request.PartnerRequestDto;
+import com.loyalbridge.LoyalBridge.dto.response.PartnerResponsedto;
+import com.loyalbridge.LoyalBridge.dto.response.paginate.PartnerResponsePaginate;
 
-public interface partnerService {
-    public void partnerSave(partnerRequestDto dto);
-    public void partnerUpdate(partnerRequestDto dto, String id);
-    public partnerResponsedto partnerFindById(String id);
+public interface PartnerService {
+    public void partnerSave(PartnerRequestDto dto);
+    public void partnerUpdate(PartnerRequestDto dto, String id);
+    public PartnerResponsedto partnerFindById(String id);
     public void partnerDeleteById(String id);
-    public partnerResponsePaginate partnerFindAll(String searchText, int page, int size);
+    public PartnerResponsePaginate partnerFindAll(String searchText, int page, int size);
 }

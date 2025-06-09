@@ -2,7 +2,7 @@ package com.loyalbridge.LoyalBridge.dto.response.paginate;
 
 import java.util.List;
 
-import com.loyalbridge.LoyalBridge.dto.response.partnerResponsedto;
+import com.loyalbridge.LoyalBridge.dto.response.PartnerResponsedto;
 
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class partnerResponsePaginate {
+public class PartnerResponsePaginate {
     private long dataCount;
-    private List<partnerResponsedto> dataList;
+    private List<PartnerResponsedto> dataList;
 }

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class partnerResponsedto {
+public class PartnerResponsedto {
     private String id;
     private String name;
     private String apiUrl;

@@ -18,5 +18,7 @@ public class UserRequestDto {
     private Boolean status;
     private Boolean highRisk;
     private Boolean verified;
-    private Integer points;
+    private String email;
+    private String password;
+    // private Integer points;
 }

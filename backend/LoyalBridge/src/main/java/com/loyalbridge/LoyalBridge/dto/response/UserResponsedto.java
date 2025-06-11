@@ -16,5 +16,4 @@ public class UserResponsedto {
     private Boolean status;
     private Boolean highRisk;
     private Boolean verified;
-    private Integer points;
 }

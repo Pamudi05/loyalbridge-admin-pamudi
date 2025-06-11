@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import javax.management.RuntimeErrorException;
 
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.loyalbridge.LoyalBridge.dto.request.UserRequestDto;
@@ -39,7 +41,8 @@ public class UserServiceImpl implements UserService{
         user.setStatus(dto.getStatus());
         user.setHighRisk(dto.getHighRisk());
         user.setVerified(dto.getVerified());
-        user.setPoints(dto.getPoints());
+        user.setEmail(dto.getEmail());
+        user.setPassword(dto.getPassword());
 
         userRepo.save(user);
     }
@@ -76,20 +79,33 @@ public class UserServiceImpl implements UserService{
         .status(dto.getStatus())
         .highRisk(dto.getHighRisk())
         .verified(dto.getVerified())
-        .points(dto.getPoints())
+        .email(dto.getEmail())
+        .password(dto.getPassword())
+        // .points(dto.getPoints())
         .build();
     }
 
     private UserResponsedto toUserResponsedto(User user){
         if (user == null) throw new RuntimeErrorException(null, "Null");
         return UserResponsedto.builder()  
-        .id(UUID.randomUUID().toString())
+        .id(user.getId())
         .name(user.getName())
         .phoneNumber(user.getPhoneNumber())
         .status(user.getStatus())
         .highRisk(user.getHighRisk())
         .verified(user.getVerified())
-        .points(user.getPoints())
         .build();
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'loadUserByUsername'");
+    }
+
+    @Override
+    public void initializeAdmin() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'initializeAdmin'");
     }
 }
